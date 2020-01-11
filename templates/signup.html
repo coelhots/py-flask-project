@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-4">Create your Account!</h1>
+      <form action="{{url_for('thank_you')}}" class="needs-validation" novalidate="">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName">Name</label>
+            <input type="text" class="form-control" name="firstName">
+            <div class="invalid-feedback">
+              A valid name must be entered.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" name="lastName">
+            <div class="invalid-feedback">
+              A valid name must be entered.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="nickname">Nickname</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">@</span>
+            </div>
+            <input type="text" class="form-control" id="nickname" placeholder="Nickname" required="">
+            <div class="invalid-feedback" style="width: 100%;">
+              Your nickname is obrigatory.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email">Email <span class="text-muted"></span></label>
+          <input type="email" class="form-control" id="email" placeholder="example@example.com">
+          <div class="invalid-feedback">
+            Please, insert a valid email for delivery news.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="password">Password <span class="text-muted"></span></label>
+          <input type="password" class="form-control" id="inputPassword" placeholder="********">
+          <div class="invalid-feedback">
+            Your password must have 8 characters or more.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="address">Address</label>
+          <input type="text" class="form-control" id="endereco" placeholder="Street, nº 0" required="">
+          <div class="invalid-feedback">
+            Please enter your shipping address.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+          <input type="text" class="form-control" id="endereco2" placeholder="Apartment or House">
+        </div>
+
+        <div class="row">
+          <div class="col-md-5 mb-3">
+            <label for="country">Country</label>
+            <select class="custom-select d-block w-100" id="pais" required="">
+              <option value="">Choice...</option>
+              <option>Brasil</option>
+            </select>
+            <div class="invalid-feedback">
+              Please, choice a valid country.
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="state">State</label>
+            <select class="custom-select d-block w-100" id="estado" required="">
+              <option value="">Choice...</option>
+              <option>Acre</option>
+            </select>
+            <div class="invalid-feedback">
+              Please, insert a valid state.
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="zipCode">Zip Code</label>
+            <input type="text" class="form-control" id="cep" placeholder="" required="">
+            <div class="invalid-feedback">
+              Please insert a valid Zip Code.
+            </div>
+        <hr class="">
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Create Account</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+{% endblock %}
